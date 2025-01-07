@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Details</title>
+  <style>
+    /* General body styling */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7f6;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+
+    /* Center the content on the page */
+    .container {
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Table styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 1.1em;
+    }
+
+    td {
+        background-color: #f9f9f9;
+    }
+
+    /* Hover effect for rows */
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* Styling for the table's header and body */
+    .table-container {
+        overflow-x: auto;
+    }
+
+    /* Responsive design for smaller screens */
+    @media (max-width: 768px) {
+        th, td {
+            padding: 8px;
+            font-size: 0.9em;
+        }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Account Details</h2>
+
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Account Number</th>
+        <th>Account Holder Name</th>
+        <th>Aadhaar No</th>
+        <th>Email</th>
+        <th>Phone No</th>
+        <th>Location</th>
+        <th>Balance</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="a : ${accounts}">
+        <td th:text="${a.id}"></td>
+        <td th:text="${a.account_number}"></td>
+        <td th:text="${a.account_holder_name}"></td>
+        <td th:text="${a.aadhar_no}"></td>
+        <td th:text="${a.email}"></td>
+        <td th:text="${a.phone_no}"></td>
+        <td th:text="${a.location}"></td>
+        <td th:text="${a.balance}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
